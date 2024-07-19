@@ -1,0 +1,247 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_QjK6d8": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HcWNmg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Gratis vareprøver",
+            "heading_size": "h1"
+          }
+        },
+        "text_W6Bg9j": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Der er ingen krav for at tilmelde sig<br\/>Vi uddeler vareprøver i størrelse XS til XXL<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HcWNmg",
+        "text_W6Bg9j"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "170721257559af4a46": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_eGQ8cJ": {
+          "type": "shopify:\/\/apps\/forms\/blocks\/inline\/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "116645",
+            "text_color": "#202020",
+            "button_background_color": "#6bc993",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 25,
+            "padding_bottom": 5,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_eGQ8cJ"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "rich_text_URdm9D": {
+      "type": "rich-text",
+      "blocks": {
+        "text_6qB8yB": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Få vareprøver før lancering fra kendte mærker som FAMME, ICIW, 2XU, FREDDY eller nye brands vi overvejer at tage ind.<\/strong><\/p><p><strong>Vareprøverne sendes med posten, og vi betaler for fragten mod din ærlige feedback.<\/strong><br\/><br\/>Nye tilmeldte bliver regelmæssigt kontaktet.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_6qB8yB"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 32
+      }
+    },
+    "image_banner_w6niVp": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/tester-sample-shapeit-desktop.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/tester-sample-shapeit-mobile.jpg",
+        "image_url": "",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "multicolumn_NwWLcA": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_gCEch3": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "shopify:\/\/collections\/famme"
+          }
+        },
+        "column_34zfTj": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "\/collections\/all\/icaniwill"
+          }
+        },
+        "column_cXaL7d": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "shopify:\/\/collections\/freddy"
+          }
+        },
+        "column_kq3cYx": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "\/collections\/all\/2xu"
+          }
+        }
+      },
+      "block_order": [
+        "column_gCEch3",
+        "column_34zfTj",
+        "column_cXaL7d",
+        "column_kq3cYx"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_3iDyHg": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Se bestsellere",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "bestsellere",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "171690207071fa57a4": {
+      "type": "apps",
+      "blocks": {
+        "stamped_product_reviews_ugc_carousel_zYd7rE": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/carousel\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "title": "Se produkt anmeldelser fra vores kunder",
+            "auto_play": true,
+            "auto_play_speed": 8000,
+            "take": 30,
+            "color_title": "",
+            "color_star": "",
+            "color_text": "#414141",
+            "color_link": "#1c1f0d",
+            "review_ids": "",
+            "product_ids": "",
+            "category": "",
+            "product_brand": "",
+            "tags": "",
+            "min_rating": "5",
+            "fill_empty": true,
+            "random": false,
+            "with_photos": false
+          }
+        }
+      },
+      "block_order": [
+        "stamped_product_reviews_ugc_carousel_zYd7rE"
+      ],
+      "custom_css": [
+        "#stamped-reviews-widget {position: relative; overflow: hidden; clear: both; max-width: 1400px; margin: auto;}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_QjK6d8",
+    "170721257559af4a46",
+    "rich_text_URdm9D",
+    "image_banner_w6niVp",
+    "multicolumn_NwWLcA",
+    "featured_collection_3iDyHg",
+    "171690207071fa57a4"
+  ]
+}

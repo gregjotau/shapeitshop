@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "651bb04b-791f-4dbc-9038-bc7a0b6b9617": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "forms": {
+      "type": "apps",
+      "blocks": {
+        "71edaa36-3189-45f6-95cc-af4521c076cf": {
+          "type": "shopify:\/\/apps\/forms\/blocks\/inline\/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "125973",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#FFFFFF",
+            "links_color": "#1878B9",
+            "errors_color": "#E02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "71edaa36-3189-45f6-95cc-af4521c076cf"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "rich_text_4Wxzr7": {
+      "type": "rich-text",
+      "blocks": {
+        "text_Ege4F9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kunne du tænke dig at komme med os på fotoshoot? Det kan både være i København, Aarhus mm. Vi elsker at bruge vores kunder på billeder og video. Du er meget velkommen til at kontakte os uanset alder, størrelse, hårfarve etc.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Ege4F9"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "651bb04b-791f-4dbc-9038-bc7a0b6b9617",
+    "forms",
+    "rich_text_4Wxzr7"
+  ]
+}
