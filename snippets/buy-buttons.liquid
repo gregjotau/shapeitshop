@@ -1,4 +1,8 @@
 {% comment %}
+  Customization: Check on request.host if the pickup availability should be rendered.
+{% endcomment %}
+
+{% comment %}
   Renders product buy-buttons.
   Accepts:
   - product: {Object} product object.
@@ -122,7 +126,7 @@
     </div>
   {%- endif -%}
 
-  {%- if show_pickup_availability -%}
+  {%- if show_pickup_availability and request.host contains '.dk' -%}
     {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
     {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
