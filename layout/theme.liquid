@@ -31,6 +31,10 @@
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
@@ -230,71 +234,37 @@
         height: 100%;
       }
 
-          body {
-            display: grid;
-            grid-template-rows: auto auto 1fr auto;
-            grid-template-columns: 100%;
-            min-height: 100%;
-            margin: 0;
-            font-size: 1.5rem;
-            letter-spacing: 0.06rem;
-            line-height: calc(1 + 0.8 / var(--font-body-scale));
-            font-family: var(--font-body-family);
-            font-style: var(--font-body-style);
-            font-weight: var(--font-body-weight);
-          }
-
-          @media screen and (min-width: 750px) {
-            body {
-              font-size: 1.6rem;
-            }
-          }
-
-        .price-item--last {
-          color: {{  settings.discount_text }};
-        }
-
-        .product-card-wrapper .card__heading {
-          font-size: {{ settings.card_title_font_size_mobile }}px;
-        }
-        @media (min-width: 750px) {
-          .product-card-wrapper .card__heading {
-            font-size: {{ settings.card_title_font_size_desktop }}px;
-          }
-        }
-        {%- if settings.single_line_sizes -%}
-          .product-card-wrapper + .product-form__input {
-            display: flex;
-            overflow: auto;
-            width: calc(100% - 5px);
-            position:relative;
-            padding-bottom:5px;
-          }
-        {%- endif -%}
-        .card__custom-badge {
-          min-width:{{ settings.product_sale_badge_width }}px;
+      body {
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 100%;
+        min-height: 100%;
+        margin: 0;
+        font-size: 1.5rem;
+        letter-spacing: 0.06rem;
+        line-height: calc(1 + 0.8 / var(--font-body-scale));
+        font-family: var(--font-body-family);
+        font-style: var(--font-body-style);
+        font-weight: var(--font-body-weight);
       }
-      .card__custom-badges--top .card__custom-badge {
-          min-width:{{ settings.product_custom_badge_width }}px;
+
+      @media screen and (min-width: 750px) {
+        body {
+          font-size: 1.6rem;
+        }
       }
-        .card__custom-badge--1 {
-          background-color: {{ settings.product_badge_1 }};
-        }
-        .card__custom-badge--2 {
-          background-color: {{ settings.product_badge_2 }};
-        }
-        .card__custom-badge--2 {
-          background-color: {{ settings.product_badge_2 }};
-        }
-        .card__custom-badge--discount {
-          background-color: {{ settings.product_badge_discount }};
-        }
-        .card__custom-badge--sale {
-          background-color: {{ settings.product_badge_sale }};
-        }
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+
+    {%- if settings.cart_type == 'drawer' -%}
+      {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+      {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+      {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+      {{ 'component-price.css' | asset_url | stylesheet_tag }}
+      {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
 
     {%- unless settings.type_body_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
@@ -498,12 +468,8 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-   <style>
-      div.stamped-container[data-widget-style], div[data-widget-style] div.stamped-container {
-    max-width: unset !important;
-      }
-    </style>
-    <script>function myInit(){ StampedFn.init({ apiKey: 'pubkey-vT98HfmM49c9S6ff6ft908fI3q2l72', sId: '194307' }); }</script>
-<script async onload="myInit()" type="text/javascript" src="https://cdn1.stamped.io/files/widget.min.js"></script>
+    {%- if settings.cart_type == 'drawer' -%}
+      <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
   </body>
 </html>
