@@ -1,5 +1,21 @@
 {
   "general": {
+    "custom": {
+      "model_info": "Malli on %s cm pitkä ja käyttää kokoa %s",
+      "bullets": {
+        "bullet_1": "1-3 days express delivery & 60 days right of return",
+        "bullet_2": "2-year guarantee and fast customer service",
+        "bullet_3": "PayPal, GPay, Apple pay & CC"
+      },
+      "reviews": {
+        "verified_buyer": "Verified buyer",
+        "view_more": "View more",
+        "submit_review": "Submit a review",
+        "see_all_photos": "See all customer photos",
+        "based_on_count": "Verified Based on {{ count }} reviews",
+        "total_reviews": "{{ count }} reviews"
+      }
+    },
     "password_page": {
       "login_form_heading": "Siirry kauppaan käyttämällä salasanaa:",
       "login_password_button": "Siirry sisään käyttämällä salasanaa",
