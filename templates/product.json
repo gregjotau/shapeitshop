@@ -40,6 +40,12 @@
             "show_gift_card_recipient": true
           }
         },
+        "custom_liquid_HE6GUr": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.model_height and product.metafields.custom.model_size %}\n  <b>\n    Modellen er {{ product.metafields.custom.model_height }} cm og bruger {{ product.metafields.custom.model_size }}\n  <\/p>\n{% endif %}"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -60,6 +66,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "custom_liquid_HE6GUr",
         "description",
         "share"
       ],
