@@ -43,7 +43,7 @@
         "custom_liquid_HE6GUr": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% if product.metafields.custom.model_height and product.metafields.custom.model_size %}\n  <b>\n    {% assign translation = 'custom.model_info' | t %}\n    {% assign with_height = translation | replace: '%s', product.metafields.custom.model_height %}\n    {{ with_height | replace: '%s', product.metafields.custom.model_size }}\n  </b>\n{% endif %}"
+            "custom_liquid": "{% if product.metafields.custom.model_height and product.metafields.custom.model_size %}\n  <b>\n    {% assign translation = 'custom.model_info' | t %}\n    {% assign with_height = translation | replace_first: '%s', product.metafields.custom.model_height %}\n    {{ with_height | replace_first: '%s', product.metafields.custom.model_size }}\n  </b>\n{% endif %}"
           }
         },
         "description": {
