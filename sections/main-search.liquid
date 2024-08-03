@@ -280,7 +280,6 @@
                           lazy_load: lazy_load,
                           skip_styles: skip_card_product_styles
                         %}
-                        {% render 'collection-swatch', product: product %}
                         {%- assign skip_card_product_styles = true -%}
                       {%- when 'article' -%}
                         {% render 'article-card',
