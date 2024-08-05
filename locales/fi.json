@@ -1,7 +1,7 @@
 {
   "general": {
     "custom": {
-      "model_info": "Malli on %s cm pitkä ja käyttää kokoa %s",
+      "model_info": "Malli %s on %s cm pitkä ja käyttää kokoa %s",
       "bullets": {
         "bullet_1": "1-3 days express delivery & 60 days right of return",
         "bullet_2": "2-year guarantee and fast customer service",

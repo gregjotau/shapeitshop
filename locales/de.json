@@ -1,6 +1,6 @@
 {
   "custom": {
-    "model_info": "Das Model ist %s cm groß und trägt Größe %s",
+    "model_info": "Model %s ist %s cm groß und trägt Größe %s",
     "bullets": {
       "bullet_1": "1-3 days express delivery & 60 days right of return",
       "bullet_2": "2-year guarantee and fast customer service",
