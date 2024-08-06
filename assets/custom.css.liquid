@@ -34,3 +34,10 @@ div.banner__media.media picture, div.banner__media.media picture>img {
   height: 100%;
   object-fit: cover;
 }
+
+{% comment %} Make iframes look good on mobile {% endcomment %}
+iframe {
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  width: 100%;
+}
