@@ -49,8 +49,15 @@ div.banner__media.media picture, div.banner__media.media picture > img {
     object-fit: cover;
 }
 
-{% comment %} Make iframes look good on mobile {% endcomment %}
-iframe {
+{% comment %}
+Make iframes look good on mobile
+
+NB! very important to not size all iframes as a lot of other iframes is used in top level of document
+if we give 100% width and height they will block the whole screen, making it unclickable
+
+{% endcomment %}
+iframe[src*="youtube.com"],
+iframe[src*="youtu.be"] {
     aspect-ratio: 16 / 9;
     height: 100%;
     width: 100% !important;
