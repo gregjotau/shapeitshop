@@ -1,43 +1,59 @@
 {% comment %} .banner--large:not(.banner--adapt) {height: 100vh;} {% endcomment %}
-.multicolumn li.multicolumn-list__item.grid__item.slider__slide {margin-left: 0;}
-.background-none .multicolumn-card__image-wrapper {margin: 0;}
+.multicolumn li.multicolumn-list__item.grid__item.slider__slide {
+    margin-left: 0;
+}
+
+.background-none .multicolumn-card__image-wrapper {
+    margin: 0;
+}
+
 .video-section__media.deferred-media video.js-youtube {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100%;
 }
 
 {% comment %}iOS bug fix{% endcomment %}
 .multicolumn-list__item.center .media--adapt, .multicolumn-list__item .media--adapt .multicolumn-card__image {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
-
 
 
 {% comment %}product thumbs full height{% endcomment %}
 
-li.thumbnail-list__item.slider__slide:before {content: none;}
-li.thumbnail-list__item.slider__slide>button.thumbnail.global-media-settings {position: relative;}
-@media screen and (max-width: 749px){li.thumbnail-list__item.slider__slide {width: calc(25% - .6rem);}}
+li.thumbnail-list__item.slider__slide:before {
+    content: none;
+}
 
+li.thumbnail-list__item.slider__slide > button.thumbnail.global-media-settings {
+    position: relative;
+}
+
+@media screen and (max-width: 749px) {
+    li.thumbnail-list__item.slider__slide {
+        width: calc(25% - .6rem);
+    }
+}
 
 
 /*New image-banner section fix*/
-div.banner__media.media picture, div.banner__media.media picture>img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+div.banner__media.media picture, div.banner__media.media picture > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 {% comment %} Make iframes look good on mobile {% endcomment %}
 iframe {
-  aspect-ratio: 16 / 9;
-  height: 100%;
-  width: 100%;
+    aspect-ratio: 16 / 9;
+    height: 100%;
+    width: 100% !important;
+    display: block !important;
+    padding-bottom: calc(610 / 1000 * 100%);
 }
