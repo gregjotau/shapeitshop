@@ -417,12 +417,12 @@
     "16463038447a5cbd60": {
       "type": "featured-collection",
       "settings": {
-        "title": "Freddy",
+        "title": "Icaniwill",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "freddy",
+        "collection": "icaniwill",
         "products_to_show": 10,
         "columns_desktop": 4,
         "full_width": false,
@@ -441,18 +441,6 @@
         "padding_top": 36,
         "padding_bottom": 52
       }
-    },
-    "1719574742228aa56f": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "1719575141bc13fa91": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
@@ -467,8 +455,6 @@
     "multicolumn_mAf8iN",
     "166057046086c544fd",
     "9b125fe3-645c-4e1d-ba53-95e8639d56aa",
-    "16463038447a5cbd60",
-    "1719574742228aa56f",
-    "1719575141bc13fa91"
+    "16463038447a5cbd60"
   ]
 }
