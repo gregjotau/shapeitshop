@@ -1,14 +1,21 @@
-{%- liquid 
-  assign product_rating = 0.0
-  assign star_product_rating = 0
-  assign product_review_count = 0
+{%- liquid
+  if product.metafields.reviews.rating.value != blank
+    assign product_rating = product.metafields.reviews.rating.value | times: 1.0 | round: 1
+    assign star_product_rating = product_rating | round
+  else
+    assign product_rating = 0
+    assign star_product_rating = 0
+  endif
+
+  if product.metafields.reviews.rating_count.value != blank
+    assign product_review_count = product.metafields.reviews.rating_count
+  else
+    assign product_review_count = 0
+  endif
+
   assign product_review_images = ''
    
   for review in product.metafields.custom.reviews.value
-    assign product_rating = product_rating | plus: review.rating
-    assign star_product_rating = star_product_rating | plus: review.rating
-    assign product_review_count = product_review_count | plus: 1
-
     if review.review_images != blank
       for src in review.review_images
         if src != blank
@@ -17,11 +24,6 @@
       endfor
     endif
   endfor
-
-  unless product_rating == 0 and product_review_count == 0
-    assign product_rating = product_rating | divided_by: product_review_count
-    assign star_product_rating = star_product_rating | divided_by: product_review_count
-  endunless
 -%}
 
 <section
@@ -35,7 +37,7 @@
       <div class="product-reviews__header-top">
         <div class="product-reviews__header-left">
           <div class="product-reviews__total-rating">
-            <span>{{ product_rating | times: 1.0 | round: 1 }}</span>
+            <span>{{ product_rating }}</span>
   
             <div class="product-reviews__product-rating">
               {% render 'star-rating', with rating: star_product_rating, float_rating: product_rating  %}
