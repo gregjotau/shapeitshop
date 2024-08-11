@@ -198,7 +198,7 @@
         {% if src != blank %}
           <img
             class="product-reviews__gallery-image swiper-slide"
-            src="{{ src | file_img_url }}"
+            src="{{ src | file_img_url: 'large' }}"
             alt="{{ product.title }}"
             data-image-index="{{ review_index | plus: 1 }}"
             loading="lazy"
