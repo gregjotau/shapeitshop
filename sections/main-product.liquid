@@ -759,6 +759,18 @@
     <script type="application/ld+json">
       {{ product | structured_data }}
     </script>
+
+    <script type="application/ld+json">
+        {
+              "@context": "http://schema.org/",
+              "@type": "AggregateRating",
+              "description": "Product Reviews",
+              "ratingValue": "{{ product.metafields.reviews.rating.value }}",
+              "ratingCount": "{{ product.metafields.reviews.rating_count }}"
+        }
+    </script>
+
+
   </div>
 </product-info>
 
