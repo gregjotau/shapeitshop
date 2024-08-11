@@ -762,11 +762,15 @@
 
     <script type="application/ld+json">
         {
-              "@context": "http://schema.org/",
-              "@type": "AggregateRating",
-              "description": "Product Reviews",
-              "ratingValue": "{{ product.metafields.reviews.rating.value }}",
-              "ratingCount": "{{ product.metafields.reviews.rating_count }}"
+            "@context": "http://schema.org/",
+            "@type": "AggregateRating",
+            "description": "Product Reviews",
+            "ratingValue": "{{ product.metafields.reviews.rating.value }}",
+            "ratingCount": "{{ product.metafields.reviews.rating_count }}",
+            "itemReviewed": {
+                "@type": "Product",
+                "name": {{ product.title | json }}
+            }
         }
     </script>
 
