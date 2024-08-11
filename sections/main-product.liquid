@@ -468,41 +468,6 @@
               {%- when 'share' -%}
                 {% assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin %}
                 {% render 'share-button', block: block, share_link: share_url %}
-
-              {%- when 'product_reviews' -%}
-                {%- liquid
-                  assign product_rating = 0
-                  assign star_product_rating = 0.0
-                  assign product_review_count = 0
-
-                  for review in product.metafields.custom.reviews.value
-                    assign product_rating = product_rating | plus: review.rating
-                    assign star_product_rating = star_product_rating | plus: review.rating
-                    assign product_review_count = product_review_count | plus: 1
-                  endfor
-
-                  unless product_rating == 0 and product_review_count == 0
-                    assign product_rating = product_rating | divided_by: product_review_count
-                    assign star_product_rating = star_product_rating | divided_by: product_review_count
-                  endunless
-                -%}
-
-                <a
-                  href="#reviews"
-                  class="product-form__reviews"
-                  style="
-                    display: flex;
-                    align-items: center;
-                    scroll-behavior: smooth;
-                    text-decoration: none;
-                  "
-                >
-                  {% render 'star-rating', with rating: product_rating, float_rating: star_product_rating %}
-                  <span style="color: rgba(78, 78, 78, 0.75);margin-left: 8px;">
-                    {{ 'custom.reviews.total_reviews' | t: count: product_review_count }}
-                  </span>
-                </a>
-
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
