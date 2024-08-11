@@ -138,16 +138,33 @@
                 </span>
               {% endif %}
             </div>
-            
-            {% if review.review_title != blank %}
+
+            {% if request.host contains '.dk' %}
+              {% if review.review_title_da != blank %}
+                <h2 class="product-reviews__review-title">
+                  {{ review.review_title_da }}
+                </h2>
+              {% else %}
+                <h2 class="product-reviews__review-title">
+                  {{ review.review_title }}
+                </h2>
+              {% endif %}
+
+              {% if review.review_text_da != blank %}
+                <p>{{ review.review_text_da }}</p>
+              {% else %}
+                <p>{{ review.review_text }}</p>
+              {% endif %}
+            {% else %}
               <h2 class="product-reviews__review-title">
                 {{ review.review_title }}
               </h2>
+
+              {% if review.review_text != blank %}
+                <p>{{ review.review_text }}</p>
+              {% endif %}
             {% endif %}
 
-            {% if review.review_text != blank %}
-              <p>{{ review.review_text }}</p>
-            {% endif %}
 
             {% if review.review_images != blank %}
               {% assign image_srcs = product_review_images | split: '***' %}
