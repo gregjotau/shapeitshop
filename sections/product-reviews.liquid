@@ -64,7 +64,7 @@
           {% if src != blank %}
             <img
               class="product-reviews__review-image"
-              src="{{ src }}"
+              src="{{ src | file_img_url: '80x80', crop: 'center' }}"
               alt="{{ product.title }}"
               js-product-reviews="image"
               data-image-index="{{ forloop.index0 }}"
@@ -163,11 +163,11 @@
                 {% if src != blank %}
                   <img
                     class="product-reviews__review-image"
-                    src="{{ src }}"
+                    src="{{ src | file_img_url: '80x80', crop: 'center' }}"
                     alt="{{ review.review_title }}"
                     js-product-reviews="image"
                     data-image-index="{{ image_index }}"
-                    loading=“lazy” 
+                    loading="lazy"
                   />
                 {% endif %}
               {% endfor %}
@@ -198,7 +198,7 @@
         {% if src != blank %}
           <img
             class="product-reviews__gallery-image swiper-slide"
-            src="{{ src }}"
+            src="{{ src | file_img_url: '80x80', crop: 'center' }}"
             alt="{{ product.title }}"
             data-image-index="{{ review_index | plus: 1 }}"
             loading="lazy"
