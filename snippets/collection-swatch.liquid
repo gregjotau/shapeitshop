@@ -28,14 +28,6 @@
             {% for variant in product.variants %}
                 {% if variant.available %}
                     {%- assign value = variant.options[option_index] -%}
-                    {% if counter == 0 %}
-                        {% assign values = values | join: ',' %}
-                        {% assign values = values | append: ',' | append: value %}
-                        {% assign values = values | split: ',' %}
-                        {% assign counter = counter | plus: 1 %}
-                        {% continue %}
-                    {% endif %}
-                    {% assign counter = counter | plus: 1 %}
                     {% unless values contains value %}
                         {% assign values = values | join: ',' %}
                         {% assign values = values | append: ',' | append: value %}
@@ -46,6 +38,7 @@
                                      src="{{ variant.image | image_url: width: '60x98', crop: 'center' }}"
                                      alt="{{ variant.title }}">
                             </a>
+                            {% assign counter = counter | plus: 1 %}
                         {% endif %}
                     {% endunless %}
                 {% endif %}
@@ -54,20 +47,27 @@
     {% endif %}
 {% endfor %}
 
-
 {% style %}
     .other-product-image { z-index: 1; }
     .product-groups__images img {width: 40px;}
-    .product-groups__images a:hover img {border:  solid 1px black;}
-    @media screen and (max-width: 798px){
-    .product-groups__images img {width: 40px;}
-    }
+    .product-groups__images a:hover img {border: solid 1px black;}
     div.product-groups__images {
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    gap: 4px;
     }
     div.product-groups__images > a.other-product-image {
+    display: inline-block;
+    flex: 0 0 auto;
     margin: 0 2px;
+    }
+    @media screen and (max-width: 798px){
+    .product-groups__images img {width: 40px;}
+    div.product-groups__images {
+    padding-bottom: 8px;
+    }
     }
 {% endstyle %}
