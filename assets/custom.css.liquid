@@ -79,3 +79,13 @@ displayed on adjacent cards, like title, does not get misaligned
         {% comment %}min-height: 32px;{% endcomment %}
     }
 }
+
+{% comment %}
+On collection page, avoid Fra X kr text to overflow to new line on mobile
+which makes the swatches that may follow look misaligned to adjacent products cards
+{% endcomment %}
+@media (max-width: 767px) { /* Adjust the max-width value to match your mobile breakpoint */
+    .price-item.price-item--sale.price-item--last {
+        font-size: 14px;
+    }
+}
