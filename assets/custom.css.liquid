@@ -63,3 +63,19 @@ iframe[src*="youtu.be"] {
     width: 100% !important;
     display: block !important;
 }
+
+{% comment %}
+On product card, the info below the image need a min height so that the information
+displayed on adjacent cards, like title, does not get misaligned
+{% endcomment %}
+.product-card-wrapper .card__content {
+    display: block;
+}
+@media (max-width:768px) {
+    .product-card-wrapper:not(.no-title-height) .card__heading a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        {% comment %}min-height: 32px;{% endcomment %}
+    }
+}
