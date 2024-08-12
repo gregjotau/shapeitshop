@@ -205,7 +205,9 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
-            {% render 'collection-swatch', product: card_product %}
+            {%- if request.path contains '/collections' or request.path contains '/search' -%}
+              {% render 'collection-swatch', product: card_product %}
+            {%- endif -%}
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants.size == 1 and quick_add == 'bulk' %}
                 {% liquid
