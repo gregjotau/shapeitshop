@@ -139,29 +139,25 @@
             </div>
 
             {% if request.host contains '.dk' %}
-              {% if review.review_title_da != blank %}
-                <h2 class="product-reviews__review-title">
-                  {{ review.review_title_da }}
-                </h2>
-              {% else %}
-                <h2 class="product-reviews__review-title">
-                  {{ review.review_title }}
-                </h2>
-              {% endif %}
-
-              {% if review.review_text_da != blank %}
-                <p>{{ review.review_text_da }}</p>
-              {% else %}
-                <p>{{ review.review_text }}</p>
-              {% endif %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title_da | default: review.review_title }}
+              </h2>
+              <p>{{ review.review_text_dk | default: review.review_text }}</p>
+            {% elsif request.host contains '.se' %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title_sv | default: review.review_title }}
+              </h2>
+              <p>{{ review.review_text_sv | default: review.review_text }}</p>
+            {% elsif request.host contains '.no' %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title | default: review.review_title_en }}
+              </h2>
+              <p>{{ review.review_text | default: review.review_text_en }}</p>
             {% else %}
               <h2 class="product-reviews__review-title">
-                {{ review.review_title }}
+                {{ review.review_title_en | default: review.review_title }}
               </h2>
-
-              {% if review.review_text != blank %}
-                <p>{{ review.review_text }}</p>
-              {% endif %}
+              <p>{{ review.review_text_en | default: review.review_text }}</p>
             {% endif %}
 
 
