@@ -1,6 +1,12 @@
+{% comment %}
+      reviews are stored in custom.reviews, the standard metafields for rating and rating_count is used.
+      product.metafields.reviews.rating.value.rating gives the decimal value instead of the string stored
+      in just value, careful to avoid doing math on the string, just giving 0.
+{% endcomment %}
 {%- liquid
   if product.metafields.reviews.rating.value != blank
-    assign product_rating = product.metafields.reviews.rating.value | times: 1.0 | round: 1
+
+    assign product_rating = product.metafields.reviews.rating.value.rating | times: 1.0 | round: 1
     assign star_product_rating = product_rating | round
   else
     assign product_rating = 0
