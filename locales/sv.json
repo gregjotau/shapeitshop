@@ -9,7 +9,6 @@
     "reviews": {
       "verified_buyer": "Verifierad köpare",
       "view_more": "Se mer",
-      "submit_review": "Skicka in en recension",
       "see_all_photos": "Se alla kundbilder",
       "based_on_count": "Verifierad Baserat på {{ count }} recensioner",
       "total_reviews": "{{ count }} recensioner"

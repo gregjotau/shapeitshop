@@ -9,7 +9,6 @@
     "reviews": {
       "verified_buyer": "Bekræftet køber",
       "view_more": "Se mere",
-      "submit_review": "Indsend en anmeldelse",
       "see_all_photos": "Se alle kundebilleder",
       "based_on_count": "Bekræftet Baseret på {{ count }} anmeldelser",
       "total_reviews": "{{ count }} anmeldelser"

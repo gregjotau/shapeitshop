@@ -10,7 +10,6 @@
       "reviews": {
         "verified_buyer": "Verified buyer",
         "view_more": "View more",
-        "submit_review": "Submit a review",
         "see_all_photos": "See all customer photos",
         "based_on_count": "Verified Based on {{ count }} reviews",
         "total_reviews": "{{ count }} reviews"

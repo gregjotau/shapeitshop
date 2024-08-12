@@ -54,15 +54,6 @@
             {{ 'custom.reviews.based_on_count' | t: count: product_review_count }}
           </span>
         </div>
-
-        <div class="product-reviews__header-right">
-          <span 
-            class="product-reviews__submit-review"
-            js-product-review="submitReview"
-          >
-            {{ 'custom.reviews.submit_review' | t }}
-          </span>
-        </div>
       </div>
 
       <div class="product-reviews__header-bottom">
@@ -236,30 +227,6 @@
     <div class="swiper-button-prev"></div>
   </div>
 
-  <div 
-    class="product-reviews__popup is-hidden"
-    js-product-review="popup"
-  >
-    <button 
-      class="product-reviews__popup-close"
-      js-product-review="popupClose"
-    >
-      {% render 'icon-close' %}
-    </button>
-
-
-    <iframe 
-      class="airtable-embed"
-      loading="lazy"
-      src="https://airtable.com/embed/shr996RFbvT5PZpcj?backgroundColor=gray&prefill_product_name={{ product.title }}&hide_product_name=true&prefill_product_id={{ product.id }}&hide_product_id=true" 
-      frameborder="0" 
-      onmousewheel="" 
-      width="100%" 
-      height="533" 
-      style="background: transparent; border: 1px solid #ccc;"
-    ></iframe>
-  </div>
-
   <div
     class="product-reviews__background-overlay is-hidden"
     js-product-review="backgroundOverlay"
@@ -310,10 +277,6 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-  }
-
-  .product-reviews__header-right {
-    align-self: flex-end;
   }
 
   .product-reviews__submit-review {
