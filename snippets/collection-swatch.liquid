@@ -1,23 +1,3 @@
-{% comment %}
-/**
- * Product Color Swatch Renderer
- *
- * This snippet renders color swatches for product variants in a collection or product card.
- *
- * - Automatically detects color/colour options
- * - Displays variant images as clickable swatches
- * - Excludes the first variant (assumed to be the main product image)
- * - Handles multiple language variations for color/colour
- * - Responsive design for mobile and desktop
- * - When used within card-product, swatch links are set to a higher z-index to ensure they remain clickable.
- *
- * Usage:
- * Include this snippet in your product card template:
- * {% render 'collection-swatch', product: product %}
- *
- */
-{% endcomment %}
-
 {% for option in product.options %}
     {%- assign downcased_option = option | downcase -%}
     {% if downcased_option contains 'color' or downcased_option contains 'colour' or downcased_option contains 'far' or downcased_option contains 'fär' %}
@@ -28,6 +8,14 @@
             {% for variant in product.variants %}
                 {% if variant.available %}
                     {%- assign value = variant.options[option_index] -%}
+                    {% if counter == 0 %}
+                        {% assign values = values | join: ',' %}
+                        {% assign values = values | append: ',' | append: value %}
+                        {% assign values = values | split: ',' %}
+                        {% assign counter = counter | plus: 1 %}
+                        {% continue %}
+                    {% endif %}
+                    {% assign counter = counter | plus: 1 %}
                     {% unless values contains value %}
                         {% assign values = values | join: ',' %}
                         {% assign values = values | append: ',' | append: value %}
@@ -38,7 +26,6 @@
                                      src="{{ variant.image | image_url: width: '60x98', crop: 'center' }}"
                                      alt="{{ variant.title }}">
                             </a>
-                            {% assign counter = counter | plus: 1 %}
                         {% endif %}
                     {% endunless %}
                 {% endif %}
@@ -47,27 +34,20 @@
     {% endif %}
 {% endfor %}
 
+
 {% style %}
     .other-product-image { z-index: 1; }
     .product-groups__images img {width: 40px;}
-    .product-groups__images a:hover img {border: solid 1px black;}
-    div.product-groups__images {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-    gap: 4px;
-    }
-    div.product-groups__images > a.other-product-image {
-    display: inline-block;
-    flex: 0 0 auto;
-    margin: 0 2px;
-    }
+    .product-groups__images a:hover img {border:  solid 1px black;}
     @media screen and (max-width: 798px){
     .product-groups__images img {width: 40px;}
-    div.product-groups__images {
-    padding-bottom: 8px;
     }
+    div.product-groups__images {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    }
+    div.product-groups__images > a.other-product-image {
+    margin: 0 2px;
     }
 {% endstyle %}
