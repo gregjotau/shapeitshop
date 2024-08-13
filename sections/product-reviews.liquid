@@ -23,7 +23,8 @@
    
   for review in product.metafields.custom.reviews.value
     if review.review_images != blank
-      for src in review.review_images
+      assign review_images_list = review.review_images | split: ','
+      for src in review_images_list
         if src != blank
           assign product_review_images = product_review_images | append: src | append: '***'
         endif
@@ -170,8 +171,9 @@
                   {% assign image_index = forloop.index0 %}
                 {% endif %}
               {% endfor %}
-              
-              {% for src in review.review_images limit: 1 %}
+
+              {% assign review_images_list = review.review_images | split: ',' %}
+              {% for src in review_images_list limit: 1 %}
                 {% if src != blank %}
                   <img
                     class="product-reviews__review-image"
