@@ -125,11 +125,10 @@
     {% if current_variant_image != blank %}
       <label
               for="{{ input_id }}"
-              style="background-image: url({{ current_variant_image | img_url: '120x120' | crop: 'center' }});
-                      height: 45px;
-                      width: 45px;
+              style="background-image: url({{ current_variant_image | img_url: '180x120' | crop: 'center' }});
+                      height: 60px;
+                      width: 40px;
                       background-size: cover;
-                      border-radius: 50%;
                       display: inline-block;
                       overflow: hidden;
                       border: 1px solid {% if value.selected %}black{% else %}transparent{% endif %};
