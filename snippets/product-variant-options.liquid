@@ -131,7 +131,12 @@
                       background-size: cover;
                       border-radius: 50%;
                       display: inline-block;
-                      overflow: hidden;"
+                      overflow: hidden;
+                      border: 1px solid {% if value.selected %}black{% else %}transparent{% endif %};
+                      box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+                      transition: border-color 0.2s ease;
+                      "
+              {{ value -}}
       ></label>
     {% else %}
       <label for="{{ input_id }}">
