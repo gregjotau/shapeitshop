@@ -161,7 +161,7 @@
       {% endif %}
       {{ input_dataset }}
     >
-    {% if current_variant_image != blank %}
+    {% if current_variant_image != blank and option_disabled == false %}
       <label
               title="{{ value }}"
               for="{{ input_id }}"
@@ -173,13 +173,13 @@
               {% endif %}
                       "
       >
-        {% if option_disabled %}
-          <span class="sold-out-overlay">
-            <span class="sold-out-text">{{- 'products.product.sold_out' | t -}}</span>
-          </span>
-        {% endif %}
+        {% comment %}{% if option_disabled %}{% endcomment %}
+          {% comment %}<span class="sold-out-overlay">{% endcomment %}
+            {% comment %}<span class="sold-out-text">{{- 'products.product.sold_out' | t -}}</span>{% endcomment %}
+          {% comment %}</span>{% endcomment %}
+        {% comment %}{% endif %}{% endcomment %}
       </label>
-    {% else %}
+    {% elsif option_disabled == false %}
       <label for="{{ input_id }}">
         {{ value -}}
         {{ label_unavailable }}
