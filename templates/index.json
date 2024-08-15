@@ -310,17 +310,17 @@
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "\/collections\/all\/icaniwill"
+            "link": "shopify:\/\/collections\/icaniwill"
           }
         },
         "column_BybxRy": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/logo-gymone.jpg",
+            "image": "shopify:\/\/shop_images\/brand-logo-aimn.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/gymone"
+            "link": "shopify:\/\/collections\/aimn"
           }
         }
       },
