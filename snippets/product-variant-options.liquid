@@ -37,6 +37,37 @@
     if value.available
       assign option_disabled = false
     endif
+
+    assign current_variant_image = ''
+    if option.name == 'Color'
+      for variant in product.variants
+        assign color_option_index = null
+        for option in product.options_with_values
+          if option.name == 'Color'
+            assign color_option_index = forloop.index0
+            break
+          endif
+        endfor
+
+        if color_option_index != null
+          capture option_value
+            case color_option_index
+              when 0
+                echo variant.option1
+              when 1
+                echo variant.option2
+              when 2
+                echo variant.option3
+            endcase
+          endcapture
+
+          if option_value == value
+            assign current_variant_image = variant.image
+            break
+          endif
+        endif
+      endfor
+    endif
   -%}
 
   {%- capture input_id -%}
@@ -91,10 +122,24 @@
       {% endif %}
       {{ input_dataset }}
     >
-    <label for="{{ input_id }}">
-      {{ value -}}
-      {{ label_unavailable }}
-    </label>
+    {% if current_variant_image != blank %}
+      <label
+              for="{{ input_id }}"
+              style="background-image: url({{ current_variant_image | img_url: '60x60' | crop: 'center' }});
+                      height: 45px;
+                      width: 45px;
+                      background-size: cover;
+                      border-radius: 50%;
+                      display: inline-block;
+                      overflow: hidden;"
+      ></label>
+    {% else %}
+      <label for="{{ input_id }}">
+        {{ value -}}
+        {{ label_unavailable }}
+      </label>
+    {% endif %}
+
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       id="{{ input_id }}"
