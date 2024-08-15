@@ -179,7 +179,7 @@
           {% comment %}</span>{% endcomment %}
         {% comment %}{% endif %}{% endcomment %}
       </label>
-    {% elsif option_disabled == false %}
+    {% elsif option_disabled == false or option.name != "Color" %}
       <label for="{{ input_id }}">
         {{ value -}}
         {{ label_unavailable }}
