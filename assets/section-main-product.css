@@ -925,9 +925,17 @@ a.product__text {
   }
 }
 
-.thumbnail-list_item--variant:not(:first-child) {
+/*
+  customization for scrolling to variant image, issue: https://github.com/Shopify/dawn/issues/1805
+  This rule should be hidden because the thumbnail-list_item--variant always visible
+*/
+/* .thumbnail-list_item--variant:not(:first-child) {
   display: none;
-}
+} */
+/*
+  customization for scrolling to variant image, issue: dawn link
+  end
+*/
 
 @media screen and (min-width: 990px) {
   .thumbnail-list {

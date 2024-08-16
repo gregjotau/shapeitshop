@@ -27,7 +27,26 @@ if (!customElements.get('product-info')) {
 
         this.initQuantityHandlers();
         this.dispatchEvent(new CustomEvent('product-info:loaded', { bubbles: true }));
+
+        /*
+          customization for scrolling to variant image, issue: dawn link
+        */
+        document.addEventListener('media-gallery:ready', this.setInitialThumbnail.bind(this))
       }
+
+      /*
+        customization for scrolling to variant image, issue: dawn link
+      */
+      /* setInitialThumbnail func start */
+      setInitialThumbnail() {
+        const variant = this.getSelectedVariant(this)
+
+        this.querySelector(`media-gallery`)?.setActiveMedia?.(
+          `${this.dataset.section}-${variant?.featured_media?.id}`,
+          false
+        );
+      }
+      /* setInitialThumbnail func end */
 
       addPreProcessCallback(callback) {
         this.preProcessHtmlCallbacks.push(callback);
@@ -299,9 +318,11 @@ if (!customElements.get('product-info')) {
         }
 
         // set featured media as active in the media gallery
+        
         this.querySelector(`media-gallery`)?.setActiveMedia?.(
           `${this.dataset.section}-${variantFeaturedMediaId}`,
-          true
+          /* customization for scrolling to variant image, issue: dawn link */
+          false
         );
 
         // update media modal
