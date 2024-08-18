@@ -18,21 +18,6 @@
         "show_text_below": true
       }
     },
-    "custom_liquid_abTf3Q": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "custom_css": [
-        "img {display: block; margin-left: auto; margin-right: auto; width: 100%; max-width: 1300px; height: auto;}",
-        "@media only screen and (max-width: 800px) {.trustpilot-banner-desktop {display: none; }}",
-        "@media only screen and (min-width: 800px) {.trustpilot-banner-mobile {display: none; }}"
-      ],
-      "settings": {
-        "custom_liquid": "<div class=\"trustpilot-banner-desktop\"><a href=\"https:\/\/dk.trustpilot.com\/review\/shapeit.dk\" target=\"_blank\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/2238\/9777\/files\/trustpilot-banner-a-desktop-top-bar.jpg?v=1721651191\"<\/img><\/a><\/div>\n\n<div class=\"trustpilot-banner-mobile\"><a href=\"https:\/\/dk.trustpilot.com\/review\/shapeit.dk\" target=\"_blank\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/2238\/9777\/files\/trustpilot-banner-mobile-top-bar.jpg?v=1716658178\"<\/img><\/a><\/div>",
-        "color_scheme": "background-2",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "featured_collection_cJmewH": {
       "type": "featured-collection",
       "settings": {
@@ -399,7 +384,6 @@
   },
   "order": [
     "2bce6a44-7d65-451b-aef9-8248e1111b73",
-    "custom_liquid_abTf3Q",
     "featured_collection_cJmewH",
     "multicolumn_7FHRDA",
     "image_banner_aJVPgM",

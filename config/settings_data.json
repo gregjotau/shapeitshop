@@ -420,19 +420,10 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".footer {margin-top: 0px;}",
-      ".list-menu > li:nth-child(3) > a > span {color: #0d151f;}",
-      ".product-reviews__submit-review {background-color: #252525;}",
-      "button.product-form__submit.button--full-width {background-color: #000;}",
-      ".announcement-bar__message {color: #fff;}",
-      " \/* Start Product Page *\/.product-bullets {display: flex; justify-content: space-between; align-items: baseline; padding-left: 0; list-style: none; text-align: center;}",
       ".product-form__input--pill input[type=\"radio\"] + label {border: none; background-color: #dbdada; border-radius: 0px; font-size: 12px;}",
       "button.product-form__submit.button--full-width {background-color: #333; border-radius: 0px;}",
       " \/* Finish Product Page *\/ \/* Start Product Card *\/div.product-form__input > a {border: none; border-radius: 0px; color: rgb(var(--color-foreground)); display: inline-block; margin: 0.6rem 0.4rem 0.1rem 0; padding: 0 3px 0 0; line-height: 1; transition: border var(--duration-short) ease; text-decoration: none; font-size: 12px;}",
-      " \/* Finish Product Card *\/.product-reviews__submit-review {border-radius: 0px;}",
-      ".button {border-radius: 0px;}",
-      " \/* HEADER *\/.header__inline-menu {justify-self: center; text-transform: uppercase;}",
-      ".cart-notification.active {background-color: #eaeaea;}"
+      " \/* Finish Product Card *\/"
     ]
   }
 }
