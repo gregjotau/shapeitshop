@@ -26,7 +26,7 @@
         "description": "<p>Nye produkter hver uge<\/p>",
         "show_description": false,
         "description_style": "body",
-        "collection": "nyheder",
+        "collection": "news",
         "products_to_show": 10,
         "columns_desktop": 4,
         "full_width": false,
@@ -56,7 +56,7 @@
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/nyheder"
+            "link": "shopify:\/\/collections\/news"
           }
         },
         "column_E9XWDp": {
@@ -208,7 +208,7 @@
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/bestsellere"
+            "link": "shopify:\/\/collections\/bestsellers"
           }
         },
         "column_HrjzfY": {

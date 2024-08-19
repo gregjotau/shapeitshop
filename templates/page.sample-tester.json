@@ -177,7 +177,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "bestsellere",
+        "collection": "bestsellers",
         "products_to_show": 12,
         "columns_desktop": 4,
         "full_width": false,
@@ -199,33 +199,6 @@
     },
     "171690207071fa57a4": {
       "type": "apps",
-      "blocks": {
-        "stamped_product_reviews_ugc_carousel_zYd7rE": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/carousel\/a103faaf-2125-4b0e-89fa-de5149736723",
-          "settings": {
-            "title": "Se produkt anmeldelser fra vores kunder",
-            "auto_play": true,
-            "auto_play_speed": 8000,
-            "take": 30,
-            "color_title": "",
-            "color_star": "",
-            "color_text": "#414141",
-            "color_link": "#1c1f0d",
-            "review_ids": "",
-            "product_ids": "",
-            "category": "",
-            "product_brand": "",
-            "tags": "",
-            "min_rating": "5",
-            "fill_empty": true,
-            "random": false,
-            "with_photos": false
-          }
-        }
-      },
-      "block_order": [
-        "stamped_product_reviews_ugc_carousel_zYd7rE"
-      ],
       "custom_css": [
         "#stamped-reviews-widget {position: relative; overflow: hidden; clear: both; max-width: 1400px; margin: auto;}"
       ],
