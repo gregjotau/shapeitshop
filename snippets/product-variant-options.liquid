@@ -144,7 +144,7 @@
               for="{{ input_id }}"
               class="variant-image-label"
               style="
-                      background-image: url({{ current_variant_image | img_url: '180x120' | crop: 'center' }});
+                      background-image: url({{ current_variant_image | img_url: '120x180' | crop: 'center' }});
               {% if value.selected %}
                       border: 1px solid black;
               {% endif %}
