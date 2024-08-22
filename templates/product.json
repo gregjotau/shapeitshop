@@ -27,12 +27,6 @@
             "swatch_shape": "circle"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "disabled": true,
-          "settings": {
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -50,13 +44,6 @@
           "type": "description",
           "settings": {
           }
-        },
-        "share": {
-          "type": "share",
-          "disabled": true,
-          "settings": {
-            "share_label": "Share"
-          }
         }
       },
       "block_order": [
@@ -64,11 +51,9 @@
         "title",
         "price",
         "variant_picker",
-        "quantity_selector",
         "buy_buttons",
         "custom_liquid_HE6GUr",
-        "description",
-        "share"
+        "description"
       ],
       "custom_css": [
         "button.product-form__submit.button--full-width {background-color: #2c3f4e; color: #dff8ce;}"
