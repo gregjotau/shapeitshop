@@ -1,11 +1,20 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "2bce6a44-7d65-451b-aef9-8248e1111b73": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/banner-desktop-aimn-DK.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/banner-mobile-aimn-DK.jpg",
-        "image_url": "shopify:\/\/collections\/aimn",
+        "image": "shopify://shop_images/banner-desktop-flared-pants-2730-1EN.jpg",
+        "image_mobile": "shopify://shop_images/banner-mobile-flared-pants-2730-1EN.jpg",
+        "image_url": "/products/flared-pants",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "middle-center",
@@ -23,7 +32,7 @@
       "settings": {
         "title": "Nyheder",
         "heading_size": "h1",
-        "description": "<p>Nye produkter hver uge<\/p>",
+        "description": "<p>Nye produkter hver uge</p>",
         "show_description": false,
         "description_style": "body",
         "collection": "news",
@@ -52,41 +61,41 @@
         "column_AJAwaf": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/banners-home-nyheder-EN-2.jpg",
+            "image": "shopify://shop_images/banners-home-nyheder-EN-2.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/news"
+            "link": "shopify://collections/news"
           }
         },
         "column_E9XWDp": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/banners-home-freddy-EN-2.jpg",
+            "image": "shopify://shop_images/banners-home-freddy-EN-2.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/freddy"
+            "link": "shopify://collections/freddy"
           }
         },
         "column_qrTbJP": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/banners-home-famme-EN-2.jpg",
+            "image": "shopify://shop_images/banners-home-famme-EN-2.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/famme"
+            "link": "shopify://collections/famme"
           }
         },
         "column_4xXpX3": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/banners-home-outlet-EN-2.jpg",
+            "image": "shopify://shop_images/banners-home-outlet-EN-2.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/tilbud"
+            "link": "shopify://collections/tilbud"
           }
         }
       },
@@ -116,9 +125,9 @@
     "image_banner_aJVPgM": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/banner-desktop-4flex-1DK.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/banner-mobile-4flex2DK.jpg",
-        "image_url": "shopify:\/\/products\/black-4flex-jeans",
+        "image": "shopify://shop_images/banner-desktop-4flex-1DK.jpg",
+        "image_mobile": "shopify://shop_images/banner-mobile-4flex2DK.jpg",
+        "image_url": "shopify://products/black-4flex-jeans",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "desktop_content_position": "middle-center",
@@ -137,7 +146,7 @@
         "column_t694Qc": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/usp-freeshipping-DK.jpg",
+            "image": "shopify://shop_images/usp-freeshipping-DK.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -147,7 +156,7 @@
         "column_N8yf8L": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/usp-free-returns-DK.jpg",
+            "image": "shopify://shop_images/usp-free-returns-DK.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -157,7 +166,7 @@
         "column_cRTwdf": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/usp-fast-shipping-DK.jpg",
+            "image": "shopify://shop_images/usp-fast-shipping-DK.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -167,7 +176,7 @@
         "column_Pm6VYT": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/usp-contact-DK.jpg",
+            "image": "shopify://shop_images/usp-contact-DK.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -204,41 +213,41 @@
         "column_wwmq9Y": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/category-banners-home-bestsellers.jpg",
+            "image": "shopify://shop_images/category-banners-home-bestsellers.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/bestsellers"
+            "link": "shopify://collections/bestsellers"
           }
         },
         "column_HrjzfY": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/category-banners-home-shoes.jpg",
+            "image": "shopify://shop_images/category-banners-home-shoes.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/sko"
+            "link": "shopify://collections/sko"
           }
         },
         "column_7XNGMk": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/category-banners-home-tights.jpg",
+            "image": "shopify://shop_images/category-banners-home-tights.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/tights"
+            "link": "shopify://collections/tights"
           }
         },
         "column_Jbq9Rx": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/category-banners-home-jeans.jpg",
+            "image": "shopify://shop_images/category-banners-home-jeans.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/jeans"
+            "link": "shopify://collections/jeans"
           }
         }
       },
@@ -271,41 +280,41 @@
         "column_HTBzNm": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/logo-famme.jpg",
+            "image": "shopify://shop_images/logo-famme.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/famme"
+            "link": "shopify://collections/famme"
           }
         },
         "column_7TtihL": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/logo-freddy.jpg",
+            "image": "shopify://shop_images/logo-freddy.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/freddy"
+            "link": "shopify://collections/freddy"
           }
         },
         "column_Cd39xf": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/logo-iciw.jpg",
+            "image": "shopify://shop_images/logo-iciw.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/icaniwill"
+            "link": "shopify://collections/icaniwill"
           }
         },
         "column_BybxRy": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/brand-logo-aimn.jpg",
+            "image": "shopify://shop_images/brand-logo-aimn.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "shopify:\/\/collections\/aimn"
+            "link": "shopify://collections/aimn"
           }
         }
       },
@@ -338,9 +347,9 @@
     "9b125fe3-645c-4e1d-ba53-95e8639d56aa": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/banner-desktop-freddy-wr-up-en-2.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/banner-mobile-freddy-wr-up-en-2.jpg",
-        "image_url": "shopify:\/\/collections\/freddy",
+        "image": "shopify://shop_images/banner-desktop-freddy-wr-up-en-2.jpg",
+        "image_mobile": "shopify://shop_images/banner-mobile-freddy-wr-up-en-2.jpg",
+        "image_url": "shopify://collections/freddy",
         "image_overlay_opacity": 0,
         "image_height": "large",
         "desktop_content_position": "middle-center",
