@@ -143,7 +143,7 @@
               <h2 class="product-reviews__review-title">
                 {{ review.review_title_da | default: review.review_title }}
               </h2>
-              <p>{{ review.review_text_dk | default: review.review_text }}</p>
+              <p>{{ review.review_text_da | default: review.review_text }}</p>
             {% elsif request.host contains '.se' %}
               <h2 class="product-reviews__review-title">
                 {{ review.review_title_sv | default: review.review_title }}
@@ -154,6 +154,51 @@
                 {{ review.review_title | default: review.review_title_en }}
               </h2>
               <p>{{ review.review_text | default: review.review_text_en }}</p>
+            {% elsif request.host contains '.de' %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title_de | default: review.review_title }}
+              </h2>
+              <p>{{ review.review_text_de | default: review.review_text }}</p>
+            {% elsif request.host contains '.es' %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title_es | default: review.review_title }}
+              </h2>
+              <p>{{ review.review_text_es | default: review.review_text }}</p>
+            {% elsif request.host contains '.fi' %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title_fi | default: review.review_title }}
+              </h2>
+              <p>{{ review.review_text_fi | default: review.review_text }}</p>
+            {% elsif request.host contains '.fr' %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title_fr | default: review.review_title }}
+              </h2>
+              <p>{{ review.review_text_fr | default: review.review_text }}</p>
+            {% elsif request.host contains '.it' %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title_it | default: review.review_title }}
+              </h2>
+              <p>{{ review.review_text_it | default: review.review_text }}</p>
+            {% elsif request.host contains '.nl' %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title_nl | default: review.review_title }}
+              </h2>
+              <p>{{ review.review_text_nl | default: review.review_text }}</p>
+            {% elsif request.host contains '.pl' %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title_pl | default: review.review_title }}
+              </h2>
+              <p>{{ review.review_text_pl | default: review.review_text }}</p>
+            {% elsif request.host contains '.pt' %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title_pt | default: review.review_title }}
+              </h2>
+              <p>{{ review.review_text_pt | default: review.review_text }}</p>
+            {% elsif request.host contains '.ro' %}
+              <h2 class="product-reviews__review-title">
+                {{ review.review_title_ro | default: review.review_title }}
+              </h2>
+              <p>{{ review.review_text_ro | default: review.review_text }}</p>
             {% else %}
               <h2 class="product-reviews__review-title">
                 {{ review.review_title_en | default: review.review_title }}
