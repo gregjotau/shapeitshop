@@ -19,9 +19,6 @@ if (!customElements.get('media-gallery')) {
             .addEventListener('click', this.setActiveMedia.bind(this, mediaToSwitch.dataset.target, false));
         });
         if (this.dataset.desktopLayout.includes('thumbnail') && this.mql.matches) this.removeListSemantic();
-
-        /* customization for scrolling to variant image, issue: https://github.com/Shopify/dawn/issues/1805 */
-        document.dispatchEvent(new CustomEvent('media-gallery:ready'))
       }
 
       onSlideChanged(event) {
@@ -80,12 +77,7 @@ if (!customElements.get('media-gallery')) {
           .querySelectorAll('button')
           .forEach((element) => element.removeAttribute('aria-current'));
         thumbnail.querySelector('button').setAttribute('aria-current', true);
-
-        /*
-          customization for scrolling to variant image, issue: https://github.com/Shopify/dawn/issues/1805
-          Hidden so that the active slide will always scroll till the edge
-        */
-        // if (this.elements.thumbnails.isSlideVisible(thumbnail, 10)) return;
+        if (this.elements.thumbnails.isSlideVisible(thumbnail, 10)) return;
 
         this.elements.thumbnails.slider.scrollTo({ left: thumbnail.offsetLeft });
       }

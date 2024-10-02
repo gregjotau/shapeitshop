@@ -1,9 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-register",
-      "settings": {
-      }
+      "type": "main-register"
     }
   },
   "order": [

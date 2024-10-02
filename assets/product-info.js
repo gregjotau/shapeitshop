@@ -29,13 +29,13 @@ if (!customElements.get('product-info')) {
         this.dispatchEvent(new CustomEvent('product-info:loaded', { bubbles: true }));
 
         /*
-          customization for scrolling to variant image, issue: dawn link
+          customization for scrolling to variant image
         */
         document.addEventListener('media-gallery:ready', this.setInitialThumbnail.bind(this))
       }
 
       /*
-        customization for scrolling to variant image, issue: dawn link
+        customization for scrolling to variant image
       */
       /* setInitialThumbnail func start */
       setInitialThumbnail() {
