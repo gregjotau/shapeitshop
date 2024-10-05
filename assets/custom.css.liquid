@@ -71,12 +71,13 @@ displayed on adjacent cards, like title, does not get misaligned
 .product-card-wrapper .card__content {
     display: block;
 }
-@media (max-width:768px) {
+
+@media (max-width: 768px) {
     .product-card-wrapper:not(.no-title-height) .card__heading a {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        {% comment %}min-height: 32px;{% endcomment %}
+    {% comment %}min-height: 32px;{% endcomment %}
     }
 }
 
@@ -84,8 +85,39 @@ displayed on adjacent cards, like title, does not get misaligned
 On collection page, avoid Fra X kr text to overflow to new line on mobile
 which makes the swatches that may follow look misaligned to adjacent products cards
 {% endcomment %}
-@media (max-width: 767px) { /* Adjust the max-width value to match your mobile breakpoint */
+@media (max-width: 767px) {
+    /* Adjust the max-width value to match your mobile breakpoint */
     .price-item.price-item--sale.price-item--last {
         font-size: 14px;
     }
 }
+
+{% comment %}
+Some unnecessary changes to the "option" pills / buttons that I just don't bother to remove
+to avoid unnecessary discussion, there is no reason to change the default in this case
+{% endcomment %}
+.product-form__input--pill input[type=\"radio\"] + label {
+    border: none;
+    background-color: #dbdada;
+    border-radius: 0px;
+    font-size: 12px;
+}
+
+button.product-form__submit.button--full-width {
+    background-color: #333;
+    border-radius: 0px;
+}
+
+div.product-form__input > a {
+    border: none;
+    border-radius: 0px;
+    color: rgb(var(--color-foreground));
+    display: inline-block;
+    margin: 0.6rem 0.4rem 0.1rem 0;
+    padding: 0 3px 0 0;
+    line-height: 1;
+    transition: border var(--duration-short) ease;
+    text-decoration: none;
+    font-size: 12px;
+}
+
