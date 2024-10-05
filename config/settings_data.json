@@ -20,6 +20,7 @@
     "page_width": 1400,
     "spacing_sections": 0,
     "animations_reveal_on_scroll": false,
+    "variant_pills_radius": 0,
     "card_title_font_size_desktop": 13,
     "card_title_font_size_mobile": 12,
     "badge_corner_radius": 0,
