@@ -7,7 +7,7 @@
 
 {% if template contains 'product' %}
     {% comment %} Klaviyo add to cart event {% endcomment %}
-    <script>
+    <script defer>
         window.addEventListener('load', function() {
             var _learnq = window._learnq || [];
 
@@ -56,8 +56,8 @@
     </script>
 
     {% comment %} Klaviyo back in stock notification {% endcomment %}
-    <script src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
-    <script>
+    <script async src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
+    <script defer>
         var klaviyo = klaviyo || [];
         klaviyo.init({
             account: 'QcD6dV',
