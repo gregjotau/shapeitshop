@@ -410,10 +410,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".product-form__input--pill input[type=\"radio\"] + label {border: none; background-color: #dbdada; border-radius: 0px; font-size: 12px;}",
-      "button.product-form__submit.button--full-width {background-color: #333; border-radius: 0px;}",
-      " /* Finish Product Page */ /* Start Product Card */div.product-form__input > a {border: none; border-radius: 0px; color: rgb(var(--color-foreground)); display: inline-block; margin: 0.6rem 0.4rem 0.1rem 0; padding: 0 3px 0 0; line-height: 1; transition: border var(--duration-short) ease; text-decoration: none; font-size: 12px;}",
-      " /* Finish Product Card */"
+
     ]
   }
 }
