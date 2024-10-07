@@ -1,6 +1,16 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "custom": {
     "model_info": "Modell %s er %s cm og bruker størrelse %s",
+    "pwbc": "Pris varierer med farge",
     "bullets": {
       "bullet_1": "Returlapp i pakken & 100 Dager åpent kjøp",
       "bullet_2": "Fri frakt over 599,- & 2 År garanti",
@@ -9,7 +19,6 @@
     "reviews": {
       "verified_buyer": "Verifisert kjøper",
       "view_more": "Se mer",
-      "see_all_photos": "Se alle bilder",
       "based_on_count": "Verifisert Basert på {{ count }} anmeldelser",
       "total_reviews": "{{ count }} anmeldelser"
     }

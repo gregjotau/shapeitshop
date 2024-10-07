@@ -1,6 +1,7 @@
 {
   "custom": {
     "model_info": "model %s is %s cm tall and wears size %s",
+    "pwbc": "Pris varierer med farge",
     "bullets": {
       "bullet_1": "Fri frakt över 599kr & 100 dagar öppet köp",
       "bullet_2": "2 års garanti & snabb kundservice",
@@ -9,7 +10,6 @@
     "reviews": {
       "verified_buyer": "Verifierad köpare",
       "view_more": "Se mer",
-      "see_all_photos": "Se alla kundbilder",
       "based_on_count": "Verifierad Baserat på {{ count }} recensioner",
       "total_reviews": "{{ count }} recensioner"
     }
