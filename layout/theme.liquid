@@ -298,8 +298,8 @@
     </script>
 
     {% if template contains 'product' %}
+        {% comment %}I thought embed should reduce need for onsite.js, but this is needed and cannot be async{% endcomment %}
         <script src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
-        {% comment %}onsite script should not be needed when having app embed{% endcomment %}
         <script defer>
             var klaviyo = klaviyo || [];
             klaviyo.init({
