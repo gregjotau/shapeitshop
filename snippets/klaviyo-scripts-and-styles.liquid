@@ -1,62 +1,4 @@
-{% comment %}
-  Klaviyo scripts and styles for product pages
-  - Includes add to cart event tracking
-  - Back in stock notification functionality
-  - Custom styling for back in stock button
-{% endcomment %}
-
 {% if template contains 'product' %}
-    {% comment %} Klaviyo add to cart event {% endcomment %}
-    <script defer>
-        window.addEventListener('load', function() {
-            var _learnq = window._learnq || [];
-
-            function addedToCart() {
-                fetch(`${window.location.origin}/cart.js`)
-                    .then(res => res.clone().json()
-                        .then(data => {
-                            var cart = {
-                                total_price: data.total_price / 100,
-                                $value: data.total_price / 100,
-                                total_discount: data.total_discount,
-                                original_total_price: data.original_total_price / 100,
-                                items: data.items
-                            };
-                            if (item !== 'undefined') {
-                                cart = Object.assign(cart, item);
-                            }
-                            if (klAjax) {
-                                _learnq.push(['track', 'Added to Cart', cart]);
-                                klAjax = false;
-                            }
-                        }));
-            }
-            (function(ns, fetch) {
-                ns.fetch = function() {
-                    const response = fetch.apply(this, arguments);
-                    response.then(res => {
-                        if (`${window.location.origin}/cart/add.js`.includes(res.url)) {
-                            addedToCart();
-                        }
-                    });
-                    return response;
-                };
-            })(window, window.fetch);
-            var klAjax = true;
-            var atcButtons = document.querySelectorAll("form[action*='/cart/add'] button[type='submit']");
-            for (var i = 0; i < atcButtons.length; i++) {
-                atcButtons[i].addEventListener('click', function() {
-                    if (klAjax) {
-                        _learnq.push(['track', 'Added to Cart', item]);
-                        klAjax = false;
-                    }
-                });
-            }
-        });
-    </script>
-
-    {% comment %} Klaviyo back in stock notification {% endcomment %}
-    <script async src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
     <script defer>
         var klaviyo = klaviyo || [];
         klaviyo.init({
@@ -91,33 +33,4 @@
             }
         });
     </script>
-
-    {% comment %} Styling for Klaviyo back in stock button / text {% endcomment %}
-    <style>
-        a.klaviyo-bis-trigger {
-            color: #4E4E4E;
-            line-height: 47px;
-        }
-        a.btn.btn--full.btn--large.klaviyo-bis-trigger,
-        p.rd {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            border: 0;
-            padding: 0 3rem;
-            cursor: pointer;
-            font-size: 1.5rem;
-            text-decoration: none;
-            color: rgb(var(--color-button-text));
-            transition: box-shadow var(--duration-short) ease;
-            -webkit-appearance: none;
-            appearance: none;
-            background-color: rgba(var(--color-button),var(--alpha-button-background));
-            border-radius: 25px;
-            min-height: calc(4.5rem + var(--buttons-border-width) * 2);
-            margin-left: 0!important;
-            max-width: 44rem;
-            width: 100%!important;
-        }
-    </style>
 {% endif %}
