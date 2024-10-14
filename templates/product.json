@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -46,7 +46,7 @@
         "custom_liquid_HE6GUr": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% if product.metafields.custom.model_height and product.metafields.custom.model_size %}\n    <b>\n        {% assign translation = 'custom.model_info' | t %}\n        {% assign with_number = translation | replace_first: '%s', '1' %}\n        {% assign with_height = with_number | replace_first: '%s', product.metafields.custom.model_height %}\n        {{ with_height | replace_first: '%s', product.metafields.custom.model_size }}\n    </b>\n    {% if product.metafields.custom.model2_height and product.metafields.custom.model2_size %}\n        <br>\n        <b>\n            {% assign translation = 'custom.model_info' | t %}\n            {% assign with_number = translation | replace_first: '%s', '2' %}\n            {% assign with_height = with_number | replace_first: '%s', product.metafields.custom.model2_height %}\n            {{ with_height | replace_first: '%s', product.metafields.custom.model2_size }}\n        </b>\n    {% endif %}\n{% endif %}"
+            "custom_liquid": "{% if product.metafields.custom.model_height and product.metafields.custom.model_size %}\n    <b>\n        {% assign translation = 'custom.model_info' | t %}\n        {% assign with_number = translation | replace_first: '%s', '1' %}\n        {% assign with_height = with_number | replace_first: '%s', product.metafields.custom.model_height %}\n        {{ with_height | replace_first: '%s', product.metafields.custom.model_size }}\n    </b>\n<br>\n    {% if product.metafields.custom.model2_height and product.metafields.custom.model2_size %}\n        <br>\n        <b>\n            {% assign translation = 'custom.model_info' | t %}\n            {% assign with_number = translation | replace_first: '%s', '2' %}\n            {% assign with_height = with_number | replace_first: '%s', product.metafields.custom.model2_height %}\n            {{ with_height | replace_first: '%s', product.metafields.custom.model2_size }}\n        </b>\n<br>\n    {% endif %}\n{% endif %}"
           }
         },
         "custom_liquid_Fkt9zX": {
