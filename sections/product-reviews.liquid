@@ -52,24 +52,62 @@
       </div>
 
       <div class="product-reviews__header-bottom">
-        {% assign image_srcs = product_review_images | split: '***' %}
+        <div class="product-reviews__image-scroll-container">
+          {% assign image_srcs = product_review_images | split: '***' %}
 
-        {% for src in image_srcs %}
-          {% if src != blank %}
-            {% assign file_extension = src | split: '.' | last | downcase %}
-            {% if file_extension != 'heic' %}
-              <img
-                      class="product-reviews__review-image"
-                      src="{{ src | file_img_url: '80x80', crop: 'center' }}"
-                      alt="{{ product.title }}"
-                      js-product-reviews="image"
-                      data-image-index="{{ forloop.index0 }}"
-                      loading="lazy"
-              />
+          {% for src in image_srcs %}
+            {% if src != blank %}
+              {% assign file_extension = src | split: '.' | last | downcase %}
+              {% if file_extension != 'heic' %}
+                <img
+                        class="product-reviews__review-image"
+                        src="{{ src | file_img_url: '120x196', crop: 'center' }}"
+                        alt="{{ product.title }}"
+                        js-product-reviews="image"
+                        data-image-index="{{ forloop.index0 }}"
+                        loading="lazy"
+                />
+              {% endif %}
             {% endif %}
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
+
+      <style>
+        .product-reviews__header-bottom {
+          overflow: hidden;
+          width: 100%;
+        }
+
+        .product-reviews__image-scroll-container {
+          display: flex;
+          overflow-x: auto;
+          scrollbar-width: none; /* Firefox */
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 10px; /* Add some padding to account for the scrollbar height */
+        }
+
+        .product-reviews__image-scroll-container::-webkit-scrollbar {
+          display: none; /* WebKit */
+        }
+
+        .product-reviews__review-image {
+          flex: 0 0 auto;
+          margin-right: 4px;
+        }
+
+        /* Optional: Add a fading effect to indicate more content */
+        .product-reviews__header-bottom::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 30px;
+          background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
+          pointer-events: none;
+        }
+      </style>
     </div>
 
     <div class="product-reviews__list">
@@ -211,7 +249,7 @@
                   {% if file_extension != 'heic' %}
                     <img
                             class="product-reviews__review-image"
-                            src="{{ src | file_img_url: '80x80', crop: 'center' }}"
+                            src="{{ src | file_img_url: '60x98', crop: 'center' }}"
                             alt="{{ review.review_title }}"
                             js-product-reviews="image"
                             data-image-index="{{ image_index }}"
@@ -396,8 +434,8 @@ margin-bottom: 0;
 .product-reviews__review-image {
 aspect-ratio: 1 / 1;
 object-fit: cover;
-height: 80px;
-width: 80px;
+height: 98px;
+width: 60px;
 }
 
 @media (max-width: 850px) {
