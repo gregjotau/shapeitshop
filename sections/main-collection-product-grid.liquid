@@ -154,10 +154,7 @@
             >
               {% assign skip_card_product_styles = false %}
               {%- for product in collection.products -%}
-                {% assign lazy_load = false %}
-                {%- if forloop.index > 2 -%}
-                  {%- assign lazy_load = true -%}
-                {%- endif -%}
+                {% assign lazy_load = false %}{%- if forloop.index > 2 -%}{%- assign lazy_load = true -%}{%- endif -%}{%- assign i = forloop.index -%}
                 <li
                         class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                         {% if settings.animations_reveal_on_scroll %}
@@ -178,6 +175,73 @@
                           section_id: section.id
                   %}
                 </li>
+                {%- if paginate.current_page < 2 -%}
+                  {%- for block in section.blocks -%}
+                    {%- if block.settings.order == i and block.settings.image != blank or block.settings.order == i and block.settings.video != blank or block.settings.order == i and block.settings.exvideo != blank -%}
+                      <li class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                        {% if settings.animations_reveal_on_scroll %}data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}
+                      >
+                        <div class="card-wrapper product-card-wrapper underline-links-hover">
+                          {%- liquid
+                            assign ratio = 1
+                            if section.settings.image_ratio == 'portrait'
+                              assign ratio = 0.8
+                            elsif section.settings.image_ratio == 'adapt'
+                              if block.settings.video != blank
+                                assign ratio = block.settings.video.aspect_ratio
+                              else
+                                assign ratio = block.settings.image.aspect_ratio
+                              endif
+                            endif
+                            if ratio == 0 or ratio == null
+                              assign ratio = 1
+                            endif
+                          -%}
+                          <div class="card card--{{ settings.card_style }} card--media" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+                            <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if block.settings.image or settings.card_style == 'standard' %} ratio{% endif %}"
+                              style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+                            >
+                              <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
+                                <div class="media media--transparent media--hover-effect">
+                                  {%- if block.settings.exvideo != blank -%}
+                                    {%- assign loop = '&loop=1&playlist=' | append: block.settings.exvideo.id -%}
+                                    {%- if block.settings.exvideo.type == 'youtube' -%}
+                                      <iframe src="https://www.youtube.com/embed/{{ block.settings.exvideo.id }}?enablejsapi=1&autoplay=1&mute=1&controls=0&showinfo=0&fs=0&modestbranding=1{{ loop }}" class="js-youtube"
+                                        allow="autoplay; encrypted-media" allowfullscreen title="{{ block.settings.description | escape }}" loading="lazy" preload="none"></iframe>
+                                    {%- else -%}
+                                      <iframe src="https://player.vimeo.com/video/{{ block.settings.exvideo.id }}?autoplay=1&mute=1&controls=0&showinfo=0&fs=0{{ loop }}" class="js-vimeo" allowfullscreen
+                                        allow="autoplay; encrypted-media" title="{{ block.settings.description | escape }}" loading="lazy" preload="none"></iframe>
+                                    {%- endif -%}
+                                  {%- elsif block.settings.video != blank -%}
+                                    {{ block.settings.video | media_tag: image_size: '533x', autoplay: true, loop: true, controls: false, muted: true, loading: 'lazy', preload: 'none' }}
+                                  {%- else -%}
+                                    <img srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                                        {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                                        {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w{%- endif -%}" src="{{ block.settings.image | image_url: width: 533 }}"
+                                      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                                      alt="{{ block.settings.image.alt | escape }}" class="motion-reduce"{% unless lazy_load == false %} loading="lazy"{% endunless %}
+                                      width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
+                                  {%- endif -%}
+                                </div>
+                              </div>
+                            </div>
+                            {%- if block.settings.title != blank or block.settings.url != blank -%}
+                              <div class="card__content">
+                                <div class="card__information">
+                                  <h3 class="card__heading{% if block.settings.image or settings.card_style == 'standard' %} h5{% endif %}"{% if block.settings.image == null and settings.card_style == 'standard' %} id="title-{{ section.id }}-{{ block.id }}"{% endif %}>
+                                    <a href="{{ block.settings.url }}" id="StandardCardNoMediaLink-{{ section.id }}-{{ block.id }}" class="full-unstyled-link"
+                                      aria-labelledby="StandardCardNoMediaLink-{{ section.id }}-{{ block.id }} NoMediaStandardBadge-{{ section.id }}-{{ block.id }}"
+                                    > {{ block.settings.title | escape }} </a>
+                                  </h3>
+                                </div>
+                              </div>
+                            {%- endif -%}
+                          </div>
+                        </div>
+                      </li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
                 {%- assign skip_card_product_styles = true -%}
               {%- endfor -%}
             </ul>
@@ -436,6 +500,50 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promo",
+      "name": "Grid promo",
+      "settings": [
+        {
+          "type": "range",
+          "min": 1,
+          "max": 50,
+          "id": "order",
+          "label": "Block order",
+          "default": 4
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Replaces the image if set"
+        },
+        {
+          "type": "video_url",
+          "id": "exvideo",
+          "accept": ["youtube","vimeo"],
+          "label": "External video",
+          "info": "Replaces regular video and image if set"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        }
+      ]
     }
   ]
 }
